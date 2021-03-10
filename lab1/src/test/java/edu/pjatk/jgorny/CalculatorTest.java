@@ -56,7 +56,7 @@ class CalculatorTest {
         double result = cal.div(2, 3);
 
 //        Assert
-        assertEquals(0.67, result,0.01);
+        assertEquals(0.67, result, 0.01);
     }
 
     @Test
@@ -80,7 +80,7 @@ class CalculatorTest {
         boolean result = cal.isPositive(3);
 
 //        Assert
-        assertTrue( result);
+        assertTrue(result);
     }
 
     @Test
@@ -92,11 +92,45 @@ class CalculatorTest {
         boolean result = cal.isPositive(-3);
 
 //        Assert
-        assertFalse( result);
+        assertFalse(result);
+    }
+
+    @Test
+    public void mult_correctInput_CorrectResult() {
+//        Prepare
+        Calculator cal = new Calculator();
+
+//        Execute
+        double result = cal.mult(4, 4);
+
+//        Assert
+        assertEquals(16, result);
     }
 
 
+    @Test
+    public void mult_multiplyingBy0_correctResult() {
+//        Prepare
+        Calculator cal = new Calculator();
 
+//        Execute
+        double result = cal.mult(4, 0);
+
+//        Assert
+        assertEquals(0, result);
+    }
+
+    @Test
+    public void mult_multiplyingByNegative_correctResult() {
+//        Prepare
+        Calculator cal = new Calculator();
+
+//        Execute
+        double result = cal.mult(4, -4);
+
+//        Assert
+        assertEquals(-16, result);
+    }
 
 
 }
